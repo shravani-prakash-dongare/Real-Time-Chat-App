@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    
+    <script type="text/javascript" src="index.js" defer></script>
+    <title>Web Chat</title>
+</head>
+<body>
+    <main>
+        <header>
+            <div class="title">
+                <img src="message.png" width="50px" class="img1">
+                <h1>Web Chat</h1>
+            </div>
+            <button type="button" onclick="show_hide()">
+                <img src="bar1.png" height="40px" width="40px">
+            </button>
+        </header>
+        <div class="container">
+            <div class="user-window"> 
+                <div class="user-head">
+                    <h3>People</h3>
+                    <h4 class="users-count"></h4>
+                </div>   
+                <div class="user-list">
+                </div>
+            </div>
+            <div class="chat-window">
+                <div class="chats">
+       
+                </div>
+                <div class="user-input">
+                    <input id="user_msg" type="text" placeholder="Type your message">
+                    <button type="button" id="user_send">SEND</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        var uwindow=document.querySelector('.user-window');
+        function show_hide(){
+            if(uwindow.style.display=="none"){
+                uwindow.style.display="block";
+            }
+            else{
+                uwindow.style.display="none";
+            }
+        }
+    </script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+</body>
+</html>
